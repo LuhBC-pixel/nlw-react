@@ -10,6 +10,7 @@ import { ChallengeBox } from "../components/ChallengeBox";
 import styles from "../styles/pages/Home.module.css";
 import { CountdownProvider } from '../contexts/CountdownContext';
 import { ChallengesProvider } from '../contexts/ChallengesContext';
+import { HomePage } from '../components/HomePage';
 
 interface HomeProps {
   level: number;

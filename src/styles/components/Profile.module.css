@@ -27,3 +27,8 @@
 .profileContainer div p img {
     margin-right: 0.5rem;
 }
+
+.profileContainer > button {
+    display: absolute;
+    margin-left: 3rem;
+}

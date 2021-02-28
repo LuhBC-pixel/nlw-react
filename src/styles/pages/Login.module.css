@@ -10,6 +10,7 @@
 }
 
 .container {
+    margin-top: 10rem;
     height: 100vh;
     max-width: 992px;
     padding: 2.5rem 2rem;
@@ -40,8 +41,17 @@
     color: #f2f3f5;
 }
 
+.section {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+}
+
 .container input {
-    width: 100%;
+    width: 100vw;
     max-width: 22rem;
     height: 5rem;
     display: flex;
@@ -60,7 +70,8 @@
 }
 
 .container button {
-    width: 5rem;
+    width: 100%;
+    max-width: 22rem;
     height: 5rem;
     display: flex;
     align-items: center;
@@ -73,10 +84,8 @@
     font-size: 1.25rem;
     font-weight: 600;
     transition: filter 0.2s;
-    position: absolute;
+    position: relative;
     overflow: hidden;
-    top: 26.5rem;
-    left: 56.5rem
 }
 
 .container button:not(:disabled):hover {

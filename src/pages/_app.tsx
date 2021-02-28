@@ -1,12 +1,14 @@
-import { useState } from 'react';
-
 import '../styles/global.css';
-
-import { ChallengesProvider } from '../contexts/ChallengesContext';
+import { useSession } from 'next-auth/client';
+import Login from './login';
 
 function MyApp({ Component, pageProps }) {
+  const [session] = useSession();
+
   return (
-    <Component {...pageProps} />
+    <div>
+      {!session ? <Login /> : <Component {...pageProps} session={session} />}
+    </div>
   )
 }
 

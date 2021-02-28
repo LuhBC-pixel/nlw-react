@@ -10,43 +10,42 @@ import { ChallengeBox } from "../components/ChallengeBox";
 import styles from "../styles/pages/Home.module.css";
 import { CountdownProvider } from '../contexts/CountdownContext';
 import { ChallengesProvider } from '../contexts/ChallengesContext';
-import Login from './login';
 
 interface HomeProps {
   level: number;
   currentExperience: number;
   challengesCompleted: number;
+  session?: string;
 }
 
 export default function Home(props: HomeProps) {
   return (
-    <Login />
-    // <ChallengesProvider 
-    //   level={props.level} 
-    //   currentExperience={props.currentExperience}
-    //   challengesCompleted={props.challengesCompleted}
-    // >
-    //   <div className={styles.container}>
-    //     <Head>
-    //       <title>Início | move.it</title>
-    //     </Head>
+    <ChallengesProvider 
+      level={props.level} 
+      currentExperience={props.currentExperience}
+      challengesCompleted={props.challengesCompleted}
+    >
+      <div className={styles.container}>
+        <Head>
+          <title>Início | move.it</title>
+        </Head>
 
-    //     <ExperienceBar />
+        <ExperienceBar />
 
-    //     <CountdownProvider>
-    //       <section>
-    //         <div>
-    //           <Profile />
-    //           <CompletedChallenges />
-    //           <Countdown />
-    //         </div>
-    //         <div>
-    //           <ChallengeBox />
-    //         </div>
-    //       </section>
-    //     </CountdownProvider>
-    //   </div>
-    // </ChallengesProvider>
+        <CountdownProvider>
+          <section>
+            <div>
+              <Profile data={props.session} />
+              <CompletedChallenges />
+              <Countdown />
+            </div>
+            <div>
+              <ChallengeBox />
+            </div>
+          </section>
+        </CountdownProvider>
+      </div>
+    </ChallengesProvider>
   )
 }
 
